@@ -7,23 +7,13 @@
 
 ::selection {
     background-color: var(--highlight);
-    color: var(--color-primary);
-}
-
-html {
-
+    color: var(--color-accent);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
     font-size: 1.75rem;
-    line-height: 1.5;
-    /* ???
-    color: var(--gin);
-    background-color: var(--outer-space);
-     */
 }
 
 h1,
@@ -34,7 +24,7 @@ h5,
 h6 {
     margin-bottom: 0.625rem;
     color: var(--color-primary);
-    font-weight: 700;
+    font-weight: 1;
 }
 
 code {
@@ -46,14 +36,12 @@ code {
 }
 
 header {
-    width: 96%;
-    margin: 0 auto;
-    padding: 2.5rem;
-    text-align: center;
+    background-color: var(--color-secondary);
 }
-header h1 {
-    padding: 1rem 1.2rem;
-    font-size: 4.5rem;
+
+header nav {
+    margin: 1.5rem;
+    padding: 1.5rem;
 }
 
 main {
@@ -61,103 +49,45 @@ main {
     margin: 2rem auto;
 }
 
-footer {
-    margin: 1.5rem;
-    text-align: center;
-}
-
-.row {
+section {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-}
-
-.justify-center {
+    flex-flow: row nowrap;
     justify-content: center;
+    margin: 1.5rem;
 }
 
-.column {
-    flex: 1 0 100%;
-    padding: 1.5rem;
-    transition: flex-basis 500ms linear;
-    margin-bottom: 1.5rem;
-}
-.card-code {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 100%;
-    padding: 2rem;
-    color: var(--color-accent);
-    outline: 4px dashed var(--color-primary);
-    outline-offset: -4px;
-    transition: all 0.5s ease-in-out;
-}
-
-.card-code .card-header{
+aside {
     position: relative;
-    margin: -4rem 0 1.5rem 0;
-    padding: 0.5rem 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    flex: 1 0 5%;
+}
+
+aside:nth-child(odd) {
+    position: relative;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    flex: 1 0 5%;
+}
+
+article {
     background-color: var(--color-secondary);
-    color: var(--color-primary);
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
+    flex: 6 0 95%;
 }
 
-.card-code:hover,
-.card-code:hover .card-header {
-    box-shadow: inset 0 0 8px var(--color-accent), 0 0 15px var(--color-accent);
-}
-
-.card-code {
-    flex-grow: 1;
-}
-
-.card-code pre {
-    /* set styles to make it so code wraps in <pre> instead of overflowing */
-    white-space: pre-wrap;
-    overflow: auto;
-    tab-size: 4;
-    padding: 1.2rem 1rem;
-    color: var(--color-accent);
-    border-radius: 8px;
-    /* use linear-gradient() function to create a fading background  */
-    background-image: linear-gradient(
-            rgba(49, 100, 128, 0.3) 0%,
-            rgba(0, 241, 214, 0.6) 100%
-    );
+ul {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
-.card-code pre:active {
-    user-select: all;
+li {
+    list-style-type: none;
+    justify-content: space-evenly;
 }
 
-@media screen and (min-width: 768px) {
-    /* on tablets, set columns to only be 50% of the width and not grow */
-    .column {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    /* select the last child to grow to full width if it has space to grow */
-    .column:last-child {
-        flex-grow: 1;
-    }
-}
-
-/* media query for larger screens */
-@media screen and (min-width: 992px) {
-    header {
-        width: 75%;
-    }
-
-    .column {
-        flex: 0 0 33.333%;
-        max-width: 33.333%;
-    }
+article li {
+    width: 33.333%;
+    margin: 4rem;
+    padding: 0.5rem;
 }
