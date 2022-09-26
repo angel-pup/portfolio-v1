@@ -36,6 +36,7 @@ code {
 }
 
 header {
+    display: block;
     background-color: var(--color-secondary);
 }
 
@@ -44,9 +45,15 @@ header nav {
     padding: 1.5rem;
 }
 
+header nav li {
+    display: flex;
+    justify-content: space-around;
+}
+
+
 main {
     width: 96%;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 section {
@@ -60,19 +67,27 @@ aside {
     position: relative;
     writing-mode: vertical-lr;
     text-orientation: upright;
-    flex: 1 0 5%;
+    width: 10%;
+    padding: 1.5rem;
 }
 
 aside:nth-child(odd) {
     position: relative;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    flex: 1 0 5%;
+    width: 10%;
+    padding: 1.5rem;
 }
 
 article {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     background-color: var(--color-secondary);
-    flex: 6 0 95%;
+    width: 90%
 }
 
 ul {
@@ -83,11 +98,113 @@ ul {
 
 li {
     list-style-type: none;
-    justify-content: space-evenly;
 }
 
 article li {
-    width: 33.333%;
+    width: 25%;
     margin: 4rem;
     padding: 0.5rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.card {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
+
+.card figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--color-accent);
+
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--color-primary);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card figure .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card figure:hover,
+.card figure:hover .card-header {
+    box-shadow: inset 0 0 8px var(--color-accent), 0 0 15px var(--color-accent);
+}
+
+.card figure pre {
+    flex-grow: 1;
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: var(--color-accent);
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(
+            rgba(49, 100, 128, 0.3) 0%,
+            rgba(0, 241, 214, 0.6) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+.card figure pre:active {
+    user-select: all;
+}
+
+@media screen and (min-width: 768px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .card {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .big {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+
+    /* select the last child to grow to full width if it has space to grow */
+    .card:last-child {
+        flex-grow: 1;
+    }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+    .card {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+
+    .big {
+        flex: 1 0 66.666%;
+        max-width: 66.666%;
+    }
 }
