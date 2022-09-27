@@ -14,7 +14,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-size: 1.75rem;
+    /*font-size: 1.75rem;*/
+    font-size: calc(14pt + 0.3vw);
     margin: 1.5rem;
 }
 
@@ -35,6 +36,7 @@ h3 {
 }
 
 p {
+    margin: 0.5rem;
     line-height: 1.5;
 }
 
@@ -52,14 +54,13 @@ header {
 }
 
 header h1 {
-    padding: 0.5rem;
+    padding: 0.3rem;
     background-color: var(--color-secondary);
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
     z-index: 2;
-    left: 12%;
 }
 
 nav {
@@ -181,7 +182,6 @@ article {
 }
 
 .card figure .card-header {
-    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
     position: relative;
     margin: -4rem 0 1.5rem 0;
     padding: 0.5rem 1rem;
@@ -204,7 +204,6 @@ article {
     padding: 1.2rem 1rem;
     color: var(--color-accent);
     border-radius: 8px;
-    /* use linear-gradient() function to create a fading background  */
     background-image: linear-gradient(
             rgba(49, 100, 128, 0.3) 0%,
             rgba(0, 241, 214, 0.6) 100%
@@ -217,13 +216,16 @@ article {
     user-select: all;
 }
 
-#selfie {
-    height: 100%;
-    max-width: 15%;
-    padding-left: 0.5rem;
-    border-radius: 25%;
-    left: 0.5%;
+#top-page {
+    display: flex;
     z-index: 3;
+    align-items: center;
+}
+
+#selfie {
+    padding-right: 0.5rem;
+    border-radius: 25%;
+    width: 10%;
 }
 
 #contact article {
@@ -262,9 +264,7 @@ article {
     font-weight: 1;
 }
 
-
 @media screen and (min-width: 768px) {
-    /* on tablets, set columns to only be 50% of the width and not grow */
     .card {
         flex: 0 0 50%;
         max-width: 50%;
@@ -275,9 +275,17 @@ article {
         max-width: 100%;
     }
 
-    /* select the last child to grow to full width if it has space to grow */
     .card:last-child {
         flex-grow: 1;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav li {
+        font-size: 1.2em;
+        margin: 0.5em 0.5em -1rem;
     }
 }
 
@@ -291,5 +299,47 @@ article {
     .big {
         flex: 1 0 66.666%;
         max-width: 66.666%;
+    }
+
+    /*nav {
+        width: 100%;
+    }
+
+    nav li {
+        font-size: 1.5em;
+        margin: 0.5em 0.5em -1rem;
+    }*/
+}
+
+@media screen and (max-width: 1420px) {
+    .container {
+        margin-bottom: 100px;
+    }
+    .container > nav {
+        padding-top: 50px;
+    }
+
+    .container > img {
+        margin-top: 100px;
+        height: 75%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .aside-left {
+        padding-right: 100px;
+    }
+
+    .aside-right {
+        padding-left: 100px;
+    }
+
+    .container img {
+        left: 1%;
+    }
+
+    .container > h1 {
+        left: 12%;
     }
 }
