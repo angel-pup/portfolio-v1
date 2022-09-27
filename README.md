@@ -8,6 +8,7 @@
 - [Credits](#credits)
 - [License](#license)
 - [Code Example](#Code-Example)
+- [Live Site](#Live-Site)
 
 ## Description
 For this project, I have created a responsive website with advanced HTML, CSS, and some intermediate JavaScript.

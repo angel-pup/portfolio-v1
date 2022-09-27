@@ -40,6 +40,10 @@ p {
     line-height: 1.5;
 }
 
+img {
+    border-radius: 8px;
+}
+
 figure p {
     /* Monospace font stack is used for our code blocks to make it look more like code */
     font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
@@ -125,6 +129,10 @@ article {
     border-radius: 8px;
     width: 95%;
     border: 5px dashed var(--color-accent);
+}
+
+article p {
+    padding-top: -0.5rem;
 }
 
 
