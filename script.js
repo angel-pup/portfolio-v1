@@ -12,7 +12,7 @@ let gameData = {
     scissors: {
         ties: 0,
         wins: 0,
-        scissors: 0
+        losses: 0
     }
 }
 
