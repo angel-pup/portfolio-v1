@@ -65,7 +65,9 @@ function generateRandomOutcome(previousOutcome, previousChanceArray) {
     return [outcome, chanceArray]
 }
 
-function alertOutcome(compOut, userIn) {
+function alertOutcome(compOut, userInput) {
+
+    let userIn = userInput.toUpperCase()
 
     if(compOut === userIn) {
         switch(userIn) {
