@@ -18,7 +18,7 @@ body {
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     /*font-size: 1.75rem;*/
     font-size: calc(14pt + 0.3vw);
-    margin: 1.5rem;
+    margin: 1rem;
 }
 
 h1,
@@ -107,7 +107,7 @@ nav li a:hover {
 
 main {
     width: 100%;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
 }
 
 section {
@@ -119,10 +119,9 @@ section {
 
 aside {
     position: relative;
-    width: 5%;
     text-orientation: upright;
-    padding: 1.5rem;
-    margin: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 article {
@@ -131,7 +130,6 @@ article {
     flex-direction: row;
     background-color: var(--color-secondary);
     border-radius: 8px;
-    width: 95%;
     border: 5px dashed var(--color-accent);
 }
 
@@ -148,21 +146,18 @@ article p {
     position: absolute;
 }
 
-
 .aside-right {
     writing-mode: vertical-rl;
+    margin-right: -1rem;
 }
 
 .aside-left {
     writing-mode: vertical-lr;
+    margin-left: -1rem;
 }
 
 .justify-center {
     justify-content: center;
-}
-
-.vl {
-    border-right: 6px solid var(--color-primary);
 }
 
 .row {
@@ -230,7 +225,7 @@ article p {
 
 #top-page {
     display: flex;
-    width: 53%;
+    width: 75%;
     z-index: 3;
     align-items: center;
     transition: all 0.5s ease-in-out;
@@ -241,7 +236,7 @@ article p {
 }
 
 #work article {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 }
 
 #contact-info {
@@ -281,11 +276,24 @@ article p {
         padding-top: 3.5rem;
         margin-bottom: 7rem;
     }
+
+    main {
+        padding-top: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: calc(10pt + 0.3vw);
+    }
+
+    article {
+        border: none;
+        border-radius: 8px;
     }
 
     #selfie {
@@ -294,10 +302,22 @@ article p {
 }
 
 @media screen and (min-width: 768px) {
+    .aside-left {
+        margin-right: 1rem;
+    }
+
+    .aside-right {
+        margin-left: 1rem;
+    }
+
     #selfie {
         padding-right: 0.5rem;
         border-radius: 25%;
         width: 10%;
+    }
+
+    .vl {
+        border-right: 5px solid var(--color-primary);
     }
 
     .card {
@@ -312,6 +332,10 @@ article p {
 
     .card:last-child {
         flex-grow: 1;
+    }
+
+    #top-page {
+        width: 53%;
     }
 
     nav {
@@ -357,16 +381,6 @@ article p {
 }
 
 @media screen and (max-width: 1600px) {
-    .aside-left {
-        margin-right: 3rem;
-        margin-left: -3rem;
-    }
-
-    .aside-right {
-        padding-left: 3rem;
-        margin-right: -3rem;
-    }
-
     .container img {
         left: 1%;
     }
