@@ -131,6 +131,7 @@ article {
     background-color: var(--color-secondary);
     border-radius: 8px;
     border: 5px dashed var(--color-accent);
+    width: 100%; /* force articles to take up remaining space in the sections */
 }
 
 article p {
@@ -252,7 +253,7 @@ article p {
     display: block;
     color: white;
     font-size: calc(8pt + 0.3vw);
-    padding: 0.6rem;
+    padding: 1rem;
     text-decoration: none;
 }
 
