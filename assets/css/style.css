@@ -156,6 +156,10 @@ article p {
     margin-left: -1rem;
 }
 
+.vl {
+    border-right: 1px solid var(--color-primary);
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -179,7 +183,7 @@ article p {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100%;
-    padding: 2rem;
+    padding: 2rem 0 0 0;
     color: var(--color-accent);
 
     /* outline is like border, but on the outside of the box instead of inside */
@@ -219,6 +223,7 @@ article p {
     align-items: center;
 }
 
+/*only used with last slide currently */
 .card figure p:active {
     user-select: all;
 }
@@ -256,9 +261,9 @@ article p {
 }
 
 @media screen and (max-width: 400px) {
-    header {
+/*    header {
         margin: 0.5rem;
-    }
+    }*/
 
     nav {
         padding-top: 3.5rem;
@@ -271,10 +276,6 @@ article p {
 }
 
 @media screen and (max-width: 768px) {
-    /*h1 {
-        font-size: 2rem;
-    }*/
-
     h2 {
         font-size: calc(12pt + 0.3vw);
         font-weight: bold;
@@ -319,6 +320,10 @@ article p {
         max-width: 100%;
     }
 
+    .card figure {
+        padding: 2rem;
+    }
+
     .card:last-child {
         flex-grow: 1;
     }
@@ -340,9 +345,8 @@ article p {
 
 /* media query for larger screens */
 @media screen and (min-width: 992px) {
-
     header {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 
     .card {
