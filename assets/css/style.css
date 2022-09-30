@@ -243,7 +243,7 @@ article p {
     display: flex;
     flex-flow: row wrap;
     list-style-type: none;
-    padding: 1rem;
+    padding: 0.5rem;
     justify-content: space-between;
     align-content: center;
 }
@@ -251,6 +251,7 @@ article p {
 #contact-info li {
     display: block;
     color: white;
+    font-size: calc(8pt + 0.3vw);
     padding: 0.6rem;
     text-decoration: none;
 }
@@ -261,10 +262,6 @@ article p {
 }
 
 @media screen and (max-width: 400px) {
-/*    header {
-        margin: 0.5rem;
-    }*/
-
     nav {
         padding-top: 3.5rem;
         margin-bottom: 7rem;
@@ -332,6 +329,10 @@ article p {
         width: 53%;
     }
 
+    #contact-info li {
+        font-size: calc(14pt + 0.4vw);
+    }
+
     nav {
         padding-top: 1rem;
     }
@@ -357,10 +358,6 @@ article p {
     .big {
         flex: 1 0 66.666%;
         max-width: 66.666%;
-    }
-
-    #contact-info li {
-        font-size: 2rem;
     }
 
     #contact-info {
